@@ -559,7 +559,7 @@ public class AuthenticateBusinessServiceImpl implements AuthenticateBusinessServ
 
 		session.setAttribute("userAccessCode", userBean.getProperties().get("userAccessCode").toString());
 		String json = new JSONObjectMapperHelper().toJsonString(userBean.getProperties().get("userAccessCode").toString());
-		loginSessionDataRepository.saveSessionData(session.getAttribute("userId").toString(), session.getAttribute("userId").toString(), DATA_TYPE.NUMBER.value, null, null, userBean.getProperties().get("userAccessCode").toString(),
+		loginSessionDataRepository.saveSessionData(session.getAttribute("userId").toString(), session.getAttribute("userId").toString(), DATA_TYPE.JSON.value, null, null, json,
 				null, null, session.getAttribute("usidHash").toString(), "userAccessCode");
 	}
 
